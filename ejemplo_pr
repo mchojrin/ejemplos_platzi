@@ -1,3 +1,0 @@
-<?php
-
-echo "Este archivo entra a través de un pull request"
