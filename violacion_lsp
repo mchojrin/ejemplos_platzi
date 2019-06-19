@@ -1,0 +1,38 @@
+<?php
+
+class Vehiculo
+{
+  private $position = 0;
+
+  public function avanzar( int $velocidad )
+  {
+    if ( $velocidad < 0 || $velocidad > 200 ) {
+      throw new OutOfBoundsException();
+    }
+
+    $this->position += $velocidad;
+  }
+}
+
+class Scooter extends Vehiculo
+{
+  public function avanzar( int $velocidad )
+  {
+    if ( $velocidad > 100 ) {
+      throw new OutOfBoundsException();
+    }
+  }
+}
+
+function avanzarVehiculo(Vehiculo $v,int $vel)
+{
+  $v->avanzar($vel);
+}
+
+$v = new Vehiculo();
+$s = new Scooter();
+
+$vel = 150;
+
+avanzarVehiculo( $v, $vel );
+avanzarVehiculo( $s, $vel );
