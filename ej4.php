@@ -1,24 +1,23 @@
 <?php
+$nombre = 'Mauro';
+$edad = 18;
 
-    function imprimirDatos()
-    {
-        GLOBAL $edad, $nombre;
+imprimirDatos();
 
-        echo "$nombre: $edad";
-        $edad++;
-    }
+if ( esMayorDeEdad( $edad ) ) {
 
-    function esMayorDeEdad( int $edad )
-    {
-        return $edad > 18;
-    }
+    echo 'Es mayor!';
+}
 
-    $nombre = 'Mauro';
-    $edad = 18;
+function esMayorDeEdad( int $edad )
+{
+    return $edad > 18;
+}
 
-    imprimirDatos();
+function imprimirDatos()
+{
+    GLOBAL $edad, $nombre;
 
-    if ( esMayorDeEdad( $edad ) ) {
-
-        echo 'Es mayor!';
-    }
+    echo "$nombre: $edad";
+    $edad++;
+}
